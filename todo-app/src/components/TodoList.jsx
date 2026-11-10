@@ -1,7 +1,12 @@
-export default function TodoList ({list}) {
+export default function TodoList ({list, delBtn, markAsDone }) {
     return (
+        <>
         <ul>
-           {list.map((todolist, index) => <li key={index}>{todolist}</li>)}
+           {list.map((todolist, index,) => <li onClick = {() => markAsDone(index)} className ={todolist.done ? 'done' : undefined} key={index}>{todolist.text}
+            <button onClick={() => delBtn(index)}>Delete</button>
+           </li>
+           )}
         </ul>
+        </>
     )
 }
