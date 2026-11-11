@@ -25,6 +25,9 @@ function deleateAllDoneItems () {
   setTodos(todo => todo.filter(keepItems => !keepItems.done))
 }
 
+function markAllAsDoneBtn () {
+  setTodos((todos) => todos.map((item) => ({ ...item, done: true })))
+}
 
 let visableTodos = todos
 
@@ -43,6 +46,7 @@ if (filter === 'Done') {
     <TodoFilter onFilter = {setFilter}  />
     <TodoList list={visableTodos} delBtn =  {handleDelBtn} markAsDone = {handleMarkAsDone}  />
     <TodoCounter todo= {todos}/>
+    <button onClick={markAllAsDoneBtn}>Mark All As Done</button>
     <button onClick={deleateAllDoneItems}>Deleate All Done Tasks</button>
   </div> 
 )}
