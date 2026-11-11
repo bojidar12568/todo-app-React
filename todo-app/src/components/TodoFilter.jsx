@@ -1,4 +1,4 @@
-export default function TodoFilter ({onFilter, list}) {
+export default function TodoFilter ({onFilter, }) {
   return (
     <div>
       <p>
