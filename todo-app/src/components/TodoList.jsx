@@ -1,4 +1,10 @@
 export default function TodoList ({list, delBtn, markAsDone }) {
+   
+    if (list.length === 0) {
+        return <p>There Are No Task Created</p>
+    }
+    
+    
     return (
         <>
         <ul>
